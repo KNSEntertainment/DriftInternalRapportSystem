@@ -3,8 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from "@/contexts/AuthContext";
 import { SkipLink, LiveRegion, StatusRegion } from "@/components/ui/accessibility";
-import { Header } from "@/components/ui/header";
-import { Navbar } from "@/components/ui/navbar";
+import { LayoutWrapper } from "@/components/layout/LayoutWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,11 +35,9 @@ export default function RootLayout({
         <LiveRegion />
         <StatusRegion />
         <AuthProvider>
-          <Header />
-          <Navbar />
-          <main id="main-content" className="flex-1">
+          <LayoutWrapper>
             {children}
-          </main>
+          </LayoutWrapper>
         </AuthProvider>
       </body>
     </html>

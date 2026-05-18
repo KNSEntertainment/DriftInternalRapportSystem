@@ -2,7 +2,7 @@
 
 import { useAuth } from '@/contexts/AuthContext';
 import { Button } from '@/components/ui/button';
-import { LogOut } from 'lucide-react';
+import { LogOut, LogIn } from 'lucide-react';
 import Link from 'next/link';
 
 export function Header() {
@@ -25,16 +25,32 @@ export function Header() {
                   </Link>
                 </div>
                 <div className="flex gap-2 items-center text-xs text-gray-300">
-                  <span className="text-xs text-gray-300">{user?.email}</span>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={handleSignOut}
-                    className="flex items-center cursor-pointer space-x-1 border-gray-600 text-gray-300 bg-red-600 hover:bg-red-700 hover:border-red-700 hover:text-white transition-colors"
-                  >
-                    <LogOut className="w-4 h-4" />
-                    <span>Logg ut</span>
-                  </Button>
+                  {user ? (
+                    <>
+                      <span className="text-xs text-gray-300">{user.email}</span>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={handleSignOut}
+                        className="flex items-center cursor-pointer space-x-1 border-gray-600 text-gray-300 bg-red-600 hover:bg-red-700 hover:border-red-700 hover:text-white transition-colors"
+                      >
+                        <LogOut className="w-4 h-4" />
+                        <span>Logg ut</span>
+                      </Button>
+                    </>
+                  ) : (
+                    <Button
+                      asChild
+                      variant="outline"
+                      size="sm"
+                      className="flex items-center cursor-pointer space-x-1 border-gray-600 text-gray-300 bg-blue-600 hover:bg-blue-700 hover:border-blue-700 hover:text-white transition-colors"
+                    >
+                      <Link href="/login">
+                        <LogIn className="w-4 h-4" />
+                        <span>Logg inn</span>
+                      </Link>
+                    </Button>
+                  )}
                 </div>
             </div>
     </header>
