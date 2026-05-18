@@ -128,3 +128,35 @@
     @apply font-sans;
   }
 }
+
+@layer utilities {
+  .container {
+    @apply mx-auto px-4 sm:px-6 lg:px-8;
+    max-width: 1120px;
+  }
+  
+  .container-sm {
+    @apply mx-auto px-4 sm:px-6 lg:px-8;
+    max-width: 640px;
+  }
+  
+  .container-md {
+    @apply mx-auto px-4 sm:px-6 lg:px-8;
+    max-width: 768px;
+  }
+  
+  .container-lg {
+    @apply mx-auto px-4 sm:px-6 lg:px-8;
+    max-width: 1024px;
+  }
+  
+  .container-xl {
+    @apply mx-auto px-4 sm:px-6 lg:px-8;
+    max-width: 1280px;
+  }
+  
+  .container-2xl {
+    @apply mx-auto px-4 sm:px-6 lg:px-8;
+    max-width: 1536px;
+  }
+}

@@ -271,7 +271,8 @@ export default function SubjectAreasPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="container py-8">
+      <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center mb-8">
           <div>
             <h1 className="text-3xl font-bold text-gray-900">Emneområder</h1>
@@ -463,6 +464,7 @@ export default function SubjectAreasPage() {
             </Card>
           ))}
         </div>
+      </div>
       </div>
 
       {/* Edit Dialog */}

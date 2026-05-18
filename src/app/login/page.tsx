@@ -132,17 +132,10 @@ export default function LoginPage() {
 								</div>
 							</div>
 
-							<div className="flex flex-col space-y-2">
-								<Button type="submit" disabled={loading} className="w-full">
-									{loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-									Logg inn
-								</Button>
-
-								<Button type="button" variant="outline" onClick={handleSignUp} disabled={loading} className="w-full">
-									{loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-									Opprett konto
-								</Button>
-							</div>
+							<Button type="submit" disabled={loading} className="w-full">
+								{loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+								Logg inn
+							</Button>
 						</form>
 
 						<div className="text-center">
